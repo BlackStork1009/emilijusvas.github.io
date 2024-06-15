@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emilijus Vaskevicius</title>
+    <link rel="stylesheet" href="src/css/styles.css?v=1.1">    
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="src/assets/images/starkislogo.jpg" alt="Logo" class="nav-logo">
+            <a href="index.html"><button class="nav-button">Home</button></a>
+        </nav>
+    </header>
+    <main>
+        <div class="projects-container">
+            <div class="project-item">
+                <button type="button" class="collapsible">Hotel Booking System</button>
+                <div class="content">
+                    <ul>
+                        <li>Written in C#</li>
+                        <li>SQL Database</li>
+                        <li>Create, Edit, Delete functions for Admins</li>
+                        <li>Orders are limited due to space available</li>
+                        <li>Authentication/Authorisation</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="project-item">
+                <button type="button" class="collapsible">DevSecOps</button>
+                <div class="content">
+                    <ul>
+                        <li>CI/CI Pipeline on GitHub Actions</li>
+                        <li>Implemented Snyk SAST Scan</li>
+                        <li>Deployed Application on Google Cloud Run</li>
+                        <li>Implemented OWASP ZAP DAST Scan</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="project-item">
+                <button type="button" class="collapsible">Encryption/Decryption Tool</button>
+                <div class="content">
+                    <ul>
+                        <li>Written in Python</li>
+                        <li>Hospital File Management Tool</li>
+                        <li>AES-256, SHA-256, PKI, Salting</li>
+                        <li>Create, Edit, Delete tools</li>
+                        <li>Authentication/Authorisation</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Add more projects as needed -->
+        </div>
+    </main>
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+              content.style.maxHeight = null;
+            } else {
+              content.style.maxHeight = content.scrollHeight + "px";
+            } 
+          });
+        }
+    </script>
+</body>
+</html>
