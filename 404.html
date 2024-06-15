@@ -6,13 +6,18 @@
     <script>
       (function() {
         var path = window.location.pathname;
-        if (path.endsWith('.html')) {
+        var currentPath = path.split('/').pop();
+
+        if (currentPath === 'index.html') {
+          path = '/';
+        } else if (path.endsWith('.html')) {
           path = path.slice(0, -5);
-          if (window.location.protocol === 'file:') {
-            window.location.replace(window.location.origin + path);
-          } else {
-            window.history.pushState({}, '', path);
-          }
+        }
+
+        if (window.location.protocol === 'file:') {
+          window.location.replace(window.location.origin + path);
+        } else {
+          window.history.pushState({}, '', path);
         }
       })();
     </script>
