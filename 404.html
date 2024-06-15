@@ -10,6 +10,8 @@
 
         if (currentPath === 'index.html') {
           path = '/';
+        } else if (path.endsWith('/index.html')) {
+          path = '/';
         } else if (path.endsWith('.html')) {
           path = path.slice(0, -5);
         }
