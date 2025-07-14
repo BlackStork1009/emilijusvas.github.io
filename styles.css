@@ -1,0 +1,231 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(40, 3, 35);
+    color: white;
+}
+
+header {
+    background-color: #6c0683;
+    color: white;
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-logo {
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.nav-button {
+    background-color: #fff;
+    color: #6c0683;
+    border: 3px solid rgb(40, 3, 35);
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: rgb(40, 3, 35);
+    color: #fff;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+main p {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.left-side, .right-side {
+    flex-basis: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.main-button {
+    background-color: #fff;
+    color: #6c0683;
+    border: 2px solid #6c0683;
+    width: 250px;
+    height: 45px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 10px;
+    align-self: center;
+    display: inline-flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+
+.main-button:hover {
+    background-color: #6c0683;
+    color: #fff;
+}
+
+.gmail-container {
+    text-align: flex;
+}
+
+.gmail-address {
+    text-align: center;
+    display: block;
+    margin-right: 68px;
+    margin-top: 30px;
+    font-size: 16px;
+    color: white;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    justify-content: center;
+}
+
+.image-grid img {
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+@media (min-width: 600px) {
+    .left-side, .right-side {
+        flex-basis: 48%;
+        text-align: left;
+    }
+}
+
+/* Projects page */
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+}
+
+.project-item {
+    width: 48%;
+    box-sizing: border-box;
+}
+
+.collapsible {
+    background-color: #6c0683;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;    
+    border-radius: 5px 5px 3px 3px;
+    box-sizing: border-box;
+}
+
+.active, .collapsible:hover {
+    background-color: #5a056d;
+}
+
+.content {
+    padding: 0 18px;
+    background-color: #6c0683;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    border: 2px solid rgb(40, 3, 35);
+    border-radius: 0 0 10px 10px;
+    margin-top: -2px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+    .projects-container {
+        flex-direction: column;
+    }
+    .project-item {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .projects-container {
+        flex-direction: column;
+    }
+    .project-item {
+        width: 100%;
+    }
+}
+
+/* Modules */
+
+.about-me {
+    max-width: 1300px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #6c0683;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.about-me h1, .about-me h2 {
+    color: white;
+}
+
+.about-me p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.about-me ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.modules-container {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.module-year {
+    flex: 1;
+    min-width: 200px;
+    color: white;
+}
+
+.module-year h3 {
+    margin-top: 0;
+    color: #fff;
+}
+
+.module-year ul li {
+    margin-bottom: 13px;
+}
