@@ -31,9 +31,78 @@
             <img src="src/assets/images/starkislogo.jpg" alt="Logo" class="nav-logo">
         </nav>
     </header>
-    <main>
-        <h1>soon..</h1>
+    <main class="about-container">
+        
+        <section class="about-section">
+        <div class="about-image">
+            <img src="src/assets/images/tench.jpg" alt="fishPB">
+        </div>
+        <div class="about-text">
+            <h2>Fishing</h2>
+            <p>
+                In my free time I like to fish. I feel like fishing allows you to spend time with yourself in the nature where you don't 
+                have to worry about any problems. The whole process of fishing is very soothing and relaxing, even though you do not 
+                catch any fish. The picture contains the tench I caught in the summer of 2024. My friends and I found a great, secluded 
+                spot for tench fishing, making 2024 a great year for fishing. 
+            </p>
+        </div>
+    </section>
+
+    <section class="about-section reverse">
+        <div class="about-image">
+            <img src="src/assets/images/graduation.jpg" alt="graduation">
+        </div>
+        <div class="about-text">
+            <h2>Graduation</h2>
+            <p>
+                I started University in 2022 and graduated in 2025. In those 3 years I've learnt quite a lot. Made new friends, challenged 
+                myself and of course learn a lot. My time at university was a mix of challenges and growth, both inside and outside 
+                the classroom. Moving into a new environment taught me how to be independent and manage my own time, while also giving 
+                me the chance to meet people from all kinds of backgrounds. Some of the best memories were spending time with my friends. 
+                Looking back, uni wasn’t just about the degree—it shaped my confidence, resilience, and the way I approach life today. 
+            </p>
+        </div>
+    </section>
+
+    <main class="about-container">
+        
+        <section class="about-section">
+        <div class="about-image">
+            <img src="src/assets/images/greece.jpg" alt="greece">
+        </div>
+        <div class="about-text">
+            <h2>Travelling</h2>
+            <p>
+                Travelling allows me to meet and embrace new cultures from all around the world. 
+                When travelling I like to pay attention to the things that are regular for the people who live there, but not so regular 
+                to the tourists. For example, walking around and looking at the buildings and their architecture, paying attention on how 
+                locals communicate with eachtoher and obviously the food and sightseeing. I have visited 14 countries so far, there are 
+                many more countries I would like to visit sometime soon. For the next trip I would like to go to the USA. However not New 
+                York city, Los Angeles, Miami, etc, no. I'd like to go to a town with the population of about 20 thousand people and explore 
+                the culture there.
+            </p>
+        </div>
+    </section>
+
     </main>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const sections = document.querySelectorAll(".about-section");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target); // animate once
+                }
+            });
+        }, { threshold: 0.2 });
+
+        sections.forEach(section => observer.observe(section));
+    });
+</script>
+
 </body>
 
 </html>

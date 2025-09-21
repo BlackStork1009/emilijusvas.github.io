@@ -335,6 +335,65 @@ main p {
     border: 2px solid white;
 }
 
+/* Apie Mane page */
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    max-width: 1000px; /* limit overall width */
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* space evenly */
+    gap: 30px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.about-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.about-image {
+    flex: 0 0 35%; /* fix image width */
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+.about-text {
+    flex: 1; /* take remaining space */
+    color: white;
+}
+
+.about-text h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.about-text p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+
 /* Mobile layout */
 @media (max-width: 768px) {
     .dissertation-container {
@@ -346,5 +405,21 @@ main p {
     .dissertation-container .right-side {
         flex-basis: 100%;
         text-align: center;
+    }
+
+    .about-section,
+    .about-section.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image {
+        flex: unset;
+        width: 100%;
+    }
+
+    .about-image img {
+        width: 80%;
+        max-width: 300px;
     }
 }
