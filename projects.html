@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emilijus Vaskevicius</title>
-    <link rel="stylesheet" href="src/css/styles.css?v=1.1">   
+    <link rel="stylesheet" href="src/css/styles.css?v=1.2">   
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -69,9 +69,76 @@
                 </div>
             </div>
             <div class="project-item">
-                <button type="button" class="collapsible"></button>
+                <button type="button" class="collapsible">Security Architecture & Network Design</button>
+                <div class="content">
+                    <ul>
+                        <li>Role: Security Architect & Network Design Consultant</li>
+                        <li>Designed network zones of trust for FiDo’s 1300+ workforce</li>
+                        <li>Implemented LAN/VLAN segmentation in Netkit</li>
+                        <li>Re-organised IP addressing with NAT & port forwarding</li>
+                        <li>Configured firewall traffic filters between zones</li>
+                        <li>Verified secure/insecure connectivity with test cases</li>
+                        <li>Augmented design with DNS, VLANs, and enhanced security features</li>
+                    </ul>
+                </div>
             </div>
-            <!-- Add more projects as needed -->
+            <div class="project-item">
+                <button type="button" class="collapsible">Secure Student Information System (Database Security)</button>
+                <div class="content">
+                    <ul>
+                        <li>Designed relational database schema with security-focused constraints</li>
+                        <li>Implemented role-based access control for administrators, faculty, and students</li>
+                        <li>Developed SQL queries to grant/restrict privileges based on user roles</li>
+                        <li>Minimised risk of unauthorised access with encryption, MFA, and password policies</li>
+                        <li>Created auditing mechanism to log changes in student records and access history</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="project-item">
+                <button type="button" class="collapsible">Intrusion Detection with Machine Learning (NSL-KDD)</button>
+                <div class="content">
+                    <ul>
+                        <li>Analysed NSL-KDD dataset (network traffic & attack types)</li>
+                        <li>Performed data preprocessing: encoding, scaling, and SMOTE for class imbalance</li>
+                        <li>Implemented and tuned two ML models: Random Forest & K-Nearest Neighbors</li>
+                        <li>Used <code>RandomizedSearchCV</code> for hyperparameter optimisation</li>
+                        <li>Evaluated models with precision, recall, F1-score, and confusion matrices</li>
+                        <li>Saved trained models for reuse using Joblib</li>
+                        <li>Recommended future improvements: deep learning (LSTM, neural nets) and ensemble methods</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="project-item">
+                <button type="button" class="collapsible">Malware Analysis: TeslaCrypt Ransomware</button>
+                <div class="content">
+                    <ul>
+                        <li>Performed static & dynamic analysis on ransomware sample</li>
+                        <li>Analysed malicious macro-enabled Word document acting as a dropper</li>
+                        <li>Identified IoCs: files, registry changes, domains, IP addresses</li>
+                        <li>Reverse engineered obfuscation (XOR, Base64) and custom packer</li>
+                        <li>Unpacked malware using x32dbg & OllyDumpEx</li>
+                        <li>Discovered persistence mechanisms and shadow copy deletion</li>
+                        <li>Created YARA rules for detection of malware family</li>
+                        <li>Mapped TTPs to MITRE ATT&CK framework</li>
+                        <li>Recommended security improvements (macro hardening, EDR, DNS filtering)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="project-item">
+                <button type="button" class="collapsible">Vulnerability Analysis & Exploit Development</button>
+                <div class="content">
+                    <ul>
+                        <li>Analysed a core DMZ application binary (itc_app) to identify vulnerabilities and prove exploitability</li>
+                        <li>Tools: Ghidra (static), GDB + PEDA (dynamic), pwntools (exploit dev), checksec</li>
+                        <li>Discovered stack-based buffer overflow in <code>gets()</code> (128-byte buffer; overflow offset ≈132 bytes)</li>
+                        <li>Binary protections: NX enabled, no stack canary, no PIE → ret2libc chosen as exploitation method</li>
+                        <li>Implemented ret2libc PoC: leak <code>puts@libc</code> (puts@plt/puts@got → main), compute libc base, call <code>system("/bin/sh")</code></li>
+                        <li>Remote exploitable over TCP (port 9000) — achieved remote shell as service user (<code>techuser</code>)</li>
+                        <li>Documented root cause (unsafe <code>gets()</code>, missing compiler mitigations) and privilege impact (service user; root only if binary is setuid)</li>
+                        <li>Recommendations: replace unsafe input functions (use <code>fgets()</code>/<code>getline()</code>), enable PIE, stack canaries, full RELRO, and add input validation & IDS/IPS</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </main>
     <script>
